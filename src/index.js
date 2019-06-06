@@ -1,8 +1,12 @@
-const Diagnostics = require('Diagnostics')
+// require your Spark modules normally
 const Scene = require('Scene')
-import { helloWorld } from './a'
 
+// add in your external modules either above or the es6 way below
+import { helloWorld } from './hello'
+
+// get the textbox in the project
 const root = Scene.root
-const plane = root.find('plane0')
+const helloText = root.find('hello')
 
-Diagnostics.log(helloWorld())
+// update the text using the function from our external module
+helloText.text = helloWorld()
