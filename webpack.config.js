@@ -1,21 +1,21 @@
 const path = require('path')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: ['babel-regenerator-runtime', './src/index.js'],
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
-      }
-    ]
+          loader: 'babel-loader',
+        },
+      },
+    ],
   },
   output: {
     filename: 'script.js',
-    path: path.resolve(__dirname, 'spark', 'scripts')
+    path: path.resolve(__dirname, 'spark', 'scripts'),
   },
   externals: {
     Animation: 'commonjs Animation',
@@ -43,6 +43,6 @@ module.exports = {
     TouchGestures: 'commonjs TouchGestures',
     CameraInfo: 'commonjs CameraInfo',
     Materials: 'commonjs Materials',
-    Textures: 'commonjs Textures'
-  }
+    Textures: 'commonjs Textures',
+  },
 }

@@ -9,4 +9,10 @@ const root = Scene.root
 const helloText = root.find('hello')
 
 // update the text using the function from our external module
-helloText.text = helloWorld()
+
+const init = async () => {
+  const text = await helloWorld()
+  helloText.text = text
+}
+
+init()
